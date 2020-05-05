@@ -1,0 +1,33 @@
+@import 'bootstrap/scss/bootstrap';
+
+p,
+span {
+  font-size: 0.8rem;
+}
+
+body {
+  font-size: 10px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  max-width: 940px;
+}
+
+.card-list {
+  width: 48%;
+}
+
+.card-img-home {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.disabled {
+  pointer-events: none;
+}
+
+.disabled.to-first-page {
+  opacity: 0.2;
+}

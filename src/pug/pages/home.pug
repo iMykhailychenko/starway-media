@@ -1,0 +1,51 @@
+.jumbotron.mb-5
+
+    .mb-3
+        p.h4.text-center Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor in culpa perferendis.
+        p.text-center Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non optio cum reiciendis provident nostrum quaerat consectetur rerum aperiam amet. Aliquid dolorum doloribus pariatur harum quo iusto facilis, error quos expedita.
+
+    form.row.input-group.m-0(method="post")
+        input.col.col-9.mr-2.form-control(type="text" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2")
+        button.col.col-3.btn.btn-primary(type="submit" id="button-addon2") Search
+
+
+.my-5
+    h2.h4.text-center Trending movies today
+
+
+ul.row.m-0.p-0.justify-content-between
+
+    each item in list
+
+        li.col.col-sm-auto.col-12.mb-4.p-0.card.card-list
+            img.card-img.card-img-home(src=`${item.img}` alt=`${item.title}`)
+
+            .card-body
+                h5.card-title=item.title
+                    span.badge.badge-secondary=item.vote
+
+                p.card-text=item.overview
+                a.btn.btn-primary.movie-link(href="") Read more
+
+
+nav(aria-label="Home page pagination")
+
+    ul.pagination.justify-content-center.my-5
+
+        li.page-item.prev.disabled
+            button.page-link.prev-btn(type="button") Previous
+
+        li.page-item.disabled
+            button.page-link(data-page="1" type="button") 1
+
+        li.page-item
+            button.page-link.pagination-js(data-page="2" type="button") 2
+
+        li.page-item
+            button.page-link.pagination-js(data-page="3" type="button") 3
+
+        li.page-item.next
+            button.page-link.next-btn(type="button") Next
+
+.row.m-0.justify-content-center
+    button.btn.btn-info.to-first-page(type="button") First page
