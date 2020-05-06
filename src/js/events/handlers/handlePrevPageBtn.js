@@ -5,7 +5,7 @@ const handlePrevPageBtn = () => {
   const href = history.state ? history.state.href : window.location.origin;
 
   window.history.pushState({}, pathname, href);
-  routes['/']();
+  routes[pathname]();
 
   window.scrollTo({ top: 0 });
 };

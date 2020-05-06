@@ -3,17 +3,22 @@
 .jumbotron.mb-5
 
     .mb-3
-        p.h4.text-center Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor in culpa perferendis.
-        p.text-center Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non optio cum reiciendis provident nostrum quaerat consectetur rerum aperiam amet. Aliquid dolorum doloribus pariatur harum quo iusto facilis, error quos expedita.
+        h4.h4.text-center With this site you can find any movie you are interested in
+        p.text-center Just start typing the name of the movie in the form below and you will see a list of movies according to your request
+        p.text-center 
+            | Also, you can press 
+            kbd enter
+            |  key on your keyboard or button 
+            mark 
+                strong Search
+            |  and see all the results for your request
+        p.text-center 
+            | But make sure you enter more than three characters, otherwise the search won't start
 
     form.search-form.row.input-group.m-0(method="post")
         input.search.col.col-9.form-control(type="text" placeholder="Start typing to search movie")
 
-        .input-group-append.col.col-3.p-0
-            button.btn.btn-primary.w-100(type="button") Search
+        .input-group-append.col.col-4.col-sm-3.p-0
+            button.btn.btn-primary.w-100.search-btn(type="button") Search
 
     #search-list
-
-
-.my-5
-    h2.h4.text-center Trending movies today

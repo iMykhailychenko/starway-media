@@ -46,6 +46,11 @@ document.addEventListener('click', event => {
     const form = document.querySelector('.pagination-form');
     handlePaginationForm(form);
   }
+
+  if (target.classList.contains('search-btn')) {
+    const form = document.querySelector('.search-form');
+    handleSearchForm(form);
+  }
 });
 
 // input event handler
