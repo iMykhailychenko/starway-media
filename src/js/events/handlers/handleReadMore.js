@@ -1,9 +1,7 @@
 import routes from '../../router/routing';
 
-const handleReadMore = (target, search) => {
+const handleReadMore = target => {
   const { id } = target.dataset;
-  const { page } = search;
-  const pageNum = page ? Number(page) : 1;
 
   window.history.pushState(
     {

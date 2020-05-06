@@ -1,4 +1,4 @@
-import routes from '../../router/routing';
+import { paginationRouting } from '../../utils/utils';
 
 const handlePaginationForm = target => {
   const pagination = document.getElementById('pagination');
@@ -6,14 +6,7 @@ const handlePaginationForm = target => {
   const maxPage = pagination.dataset.max;
   const page = Number(value) > Number(maxPage) ? maxPage : value;
 
-  window.history.pushState(
-    {},
-    `?page=${page}`,
-    `${window.location.origin}?page=${page}`,
-  );
-  routes['/']();
-
-  window.scrollTo({ top: 0 });
+  paginationRouting(page);
 };
 
 export default handlePaginationForm;

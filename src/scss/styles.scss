@@ -1,7 +1,8 @@
 @import 'bootstrap/scss/bootstrap';
 
 p,
-span {
+span,
+.badge {
   font-size: 0.8rem;
 }
 
@@ -30,4 +31,13 @@ body {
 
 .disabled.to-first-page {
   opacity: 0.2;
+}
+
+.serch-item {
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.serch-item:hover {
+  background-color: #eee;
 }

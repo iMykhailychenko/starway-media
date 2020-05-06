@@ -2,7 +2,7 @@ import poster from '../../../img/poster.jpeg';
 
 export const formateHomePage = results => {
   return results.map(
-    ({ id, backdrop_path, title, overview, vote_average }) => ({
+    ({ id, backdrop_path, title, overview }) => ({
       id,
       img: backdrop_path
         ? `http://image.tmdb.org/t/p/w400${backdrop_path}`
@@ -10,7 +10,6 @@ export const formateHomePage = results => {
       title,
       overview:
         overview.length < 150 ? overview : `${overview.slice(0, 150)} ...`,
-      vote: vote_average,
     }),
   );
 };

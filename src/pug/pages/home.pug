@@ -1,22 +1,3 @@
-.jumbotron.mb-5
-
-    .mb-3
-        p.h4.text-center Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor in culpa perferendis.
-        p.text-center Lorem, ipsum dolor sit amet consectetur adipisicing elit. Non optio cum reiciendis provident nostrum quaerat consectetur rerum aperiam amet. Aliquid dolorum doloribus pariatur harum quo iusto facilis, error quos expedita.
-
-    form.row.input-group.m-0(method="post")
-        input.search.col.col-9.form-control(type="text" placeholder="Start typing to search movie")
-
-        .input-group-append.col.col-3.p-0
-            button.btn.btn-primary.w-100(type="button") Search
-
-    #search-list
-
-
-.my-5
-    h2.h4.text-center Trending movies today
-
-
 ul.row.m-0.p-0.justify-content-between
 
     each item in list
@@ -26,10 +7,8 @@ ul.row.m-0.p-0.justify-content-between
 
             .card-body
                 h5.card-title=item.title
-                    span.badge.badge-secondary=item.vote
-
                 p.card-text=item.overview
-                a.btn.btn-primary.movie-link(href="") Read more
+                a.btn.btn-primary.movie-link(href="" data-id=`${item.id}`) Read more
 
 
 nav#pagination(aria-label="Home page pagination")

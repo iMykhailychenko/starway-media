@@ -1,13 +1,16 @@
 import queryString from 'query-string';
 import popularMovies from '../server/popularMovies';
-import { KEY, moviesListLayout } from '../utils/utils';
+import { KEY } from '../utils/utils';
 import renderPagination from './helpers/renderPagination';
 import { formateHomePage } from './helpers/formateResponsData';
 import { homeHeader } from './helpers/headers';
 
 // template
+import initialTemplate from '../../pug/modules/template/preloader.pug';
 import homeTemplate from '../../pug/pages/home.pug';
-import { listPreloader } from '../preloaders/preloader.js';
+
+//img
+import preloader from '../../img/home-preloader.gif';
 
 const rootElem = document.getElementById('root');
 
@@ -16,8 +19,8 @@ const home = () => {
   homeHeader();
 
   // initial markup
-  const markup = homeTemplate(listPreloader);
-  rootElem.innerHTML = markup;
+  const initialMarkup = initialTemplate({ preloader });
+  rootElem.innerHTML = initialMarkup;
 
   // get query string with page namber
   const search = queryString.parse(window.location.search);
@@ -27,10 +30,11 @@ const home = () => {
   popularMovies(KEY, page).then(data => {
     const { results } = data;
     const maxPage = data.total_pages;
-    const moviesList = formateHomePage(results);
+    const list = formateHomePage(results);
 
     // render main layout
-    moviesListLayout(moviesList);
+    const markup = homeTemplate({ list });
+    rootElem.innerHTML = markup;
 
     // render pagination
     renderPagination(search, maxPage);
