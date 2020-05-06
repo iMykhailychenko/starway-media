@@ -1,6 +1,6 @@
 ## Test task - Starway Media / Movie search app
 
-#### Веб-сторынка за цим [посиланням](https://starway-media.netlify.app/)
+#### Веб-сторінка за цим [посиланням](https://starway-media.netlify.app/)
 
 ## Тестове завдання для Front-End
 
