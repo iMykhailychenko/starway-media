@@ -6,7 +6,10 @@ const handleReadMore = (target, search) => {
   const pageNum = page ? Number(page) : 1;
 
   window.history.pushState(
-    { page: pageNum },
+    {
+      pathname: window.location.pathname,
+      href: window.location.href,
+    },
     `/movie?id=${id}`,
     `${window.location.origin}/movie?id=${id}`,
   );

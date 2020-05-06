@@ -1,13 +1,10 @@
 import routes from '../../router/routing';
 
 const handlePrevPageBtn = () => {
-  const { page } = history.state;
-  
-  window.history.pushState(
-    {},
-    `?page=${page}`,
-    `${window.location.origin}?page=${page}`,
-  );
+  const pathname = history.state ? history.state.pathname : '/';
+  const href = history.state ? history.state.href : window.location.origin;
+
+  window.history.pushState({}, pathname, href);
   routes['/']();
 
   window.scrollTo({ top: 0 });

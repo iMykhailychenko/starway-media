@@ -1,0 +1,6 @@
+ul.list-group.mt-3
+    li.list-group-item.active Cras justo odio
+
+    each item in list
+    
+        li.list-group-item(data-id=`${item.id}`)=item.title

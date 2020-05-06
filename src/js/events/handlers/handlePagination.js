@@ -1,6 +1,9 @@
 import routes from '../../router/routing';
 
 const handlePagination = target => {
+  const isActive = target.parentElement.classList.contains('active');
+  if (isActive) return;
+
   const { page } = target.dataset;
 
   window.history.pushState(

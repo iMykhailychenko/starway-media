@@ -26,13 +26,14 @@ const home = () => {
   // main markup
   popularMovies(KEY, page).then(data => {
     const { results } = data;
+    const maxPage = data.total_pages;
     const moviesList = formateHomePage(results);
 
     // render main layout
     moviesListLayout(moviesList);
 
     // render pagination
-    renderPagination(search);
+    renderPagination(search, maxPage);
   });
 };
 
