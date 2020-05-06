@@ -1,4 +1,4 @@
-ul.row.m-0.p-0.justify-content-between
+ul.row.m-0.p-0.justify-content-between.respons-list
 
     each item in list
 
@@ -8,31 +8,7 @@ ul.row.m-0.p-0.justify-content-between
             .card-body
                 h5.card-title=item.title
                 p.card-text=item.overview
-                a.btn.btn-primary.movie-link(href="") Read more
+                a.btn.btn-primary.movie-link(href="" data-id=`${item.id}`) Read more
 
 
 nav#pagination(aria-label="Home page pagination")
-
-    ul.pagination.justify-content-center.my-5
-
-        li.page-item.prev.disabled
-            button.page-link.prev-btn(type="button") Previous
-
-        li.page-item.active
-            button.page-link.pagination-js(data-page="1" type="button") 1
-
-        li.page-item
-            button.page-link.pagination-js(data-page="2" type="button") 2
-
-        li.page-item
-            button.page-link.pagination-js(data-page="3" type="button") 3
-
-        li.page-item.next
-            button.page-link.next-btn(type="button") Next
-
-form(method="post").pagination-form.input-group.mb-3.justify-content-center
-
-    input.col.col-3.form-control(type="number" name="page" placeholder="Enter page namber")
-
-    .input-group-append
-        button.btn.btn-outline-secondary.paggination-go(type="button") Go

@@ -1,17 +1,10 @@
-import routes from '../../router/routing';
+import paginationRouting from '../../utils/paginationRouting';
 
 const handlePaginationNextBtn = search => {
   const { page } = search;
-  const pageNum = page ? Number(page) : 1;
+  const pageNum = page ? Number(page) + 1 : 2;
 
-  window.history.pushState(
-    {},
-    `?page=${pageNum + 1}`,
-    `${window.location.origin}?page=${pageNum + 1}`,
-  );
-  routes['/']();
-
-  window.scrollTo({ top: 0 });
+  paginationRouting(pageNum);
 };
 
 export default handlePaginationNextBtn;

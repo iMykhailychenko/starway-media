@@ -1,9 +1,8 @@
 import queryString from 'query-string';
 import searchMovie from '../server/searchMovie';
-import { KEY } from '../utils/utils';
-import { responsHeader } from './helpers/headers';
-import { formateHomePage } from './helpers/formateResponsData';
-import renderPagination from './helpers/renderPagination';
+import { responsHeader } from '../utils/headersTempl';
+import formateHomePage from '../utils/formateHomePage';
+import renderPagination from '../utils/renderPagination';
 
 // template
 import initialTemplate from '../../pug/modules/template/preloader.pug';
@@ -39,7 +38,7 @@ const respons = () => {
   searchInput.value = inputValue;
 
   // main markup
-  searchMovie(KEY, query, page).then(data => {
+  searchMovie(query, page).then(data => {
     const { results } = data;
     const maxPage = data.total_pages;
     const list = formateHomePage(results);

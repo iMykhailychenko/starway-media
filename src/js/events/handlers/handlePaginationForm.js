@@ -1,4 +1,4 @@
-import { paginationRouting } from '../../utils/utils';
+import paginationRouting from '../../utils/paginationRouting';
 
 const handlePaginationForm = target => {
   const pagination = document.getElementById('pagination');

@@ -1,9 +1,8 @@
 import queryString from 'query-string';
 import popularMovies from '../server/popularMovies';
-import { KEY } from '../utils/utils';
-import renderPagination from './helpers/renderPagination';
-import { formateHomePage } from './helpers/formateResponsData';
-import { homeHeader } from './helpers/headers';
+import renderPagination from '../utils/renderPagination';
+import formateHomePage from '../utils/formateHomePage';
+import { homeHeader } from '../utils/headersTempl';
 
 // template
 import initialTemplate from '../../pug/modules/template/preloader.pug';
@@ -27,7 +26,7 @@ const home = () => {
   const page = search.page ? `page=${search.page}` : null;
 
   // main markup
-  popularMovies(KEY, page).then(data => {
+  popularMovies(page).then(data => {
     const { results } = data;
     const maxPage = data.total_pages;
     const list = formateHomePage(results);

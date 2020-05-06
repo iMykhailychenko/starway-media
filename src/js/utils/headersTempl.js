@@ -1,6 +1,6 @@
-import homeHeaderTemplate from '../../../pug/modules/template/header-home.pug';
-import movieHeaderTemplate from '../../../pug/modules/template/header-movie.pug';
-import responsHeaderTemplate from '../../../pug/modules/template/header-respons.pug';
+import homeHeaderTemplate from '../../pug/modules/template/header-home.pug';
+import movieHeaderTemplate from '../../pug/modules/template/header-movie.pug';
+import responsHeaderTemplate from '../../pug/modules/template/header-respons.pug';
 
 const headerElem = document.getElementById('header');
 

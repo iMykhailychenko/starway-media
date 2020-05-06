@@ -8,15 +8,16 @@ const routes = {
   '/movie': movie,
 };
 
-const { pathname } = window.location;
 
 // init page template according to uri
 window.addEventListener('load', () => {
+  const { pathname } = window.location;
   routes[pathname]();
 });
 
 // change pages after histoty push event
 window.onpopstate = () => {
+  const { pathname } = window.location;
   routes[pathname]();
 };
 

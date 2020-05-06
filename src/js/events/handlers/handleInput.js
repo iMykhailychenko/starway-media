@@ -1,5 +1,4 @@
 import searchMovie from '../../server/searchMovie';
-import { KEY } from '../../utils/utils';
 import listTemplate from '../../../pug/modules/template/search-list.pug';
 
 const formateData = results => {
@@ -25,12 +24,17 @@ const handleInput = ({ target }) => {
     return;
   }
 
-  searchMovie(KEY, value).then(({ results, total_results }) => {
+  searchMovie(value).then(({ results, total_results }) => {
     const list = formateData(results);
     listRoot.innerHTML = listTemplate({ list });
 
     // get total results element here as it is avalible only after listTemplate insert
     const totalResults = document.querySelector('.total-result');
+
+    // we should do extra check here becouse it's async operation and some times it can 
+    // resolves after we change template page (route).
+    // next code will brake code if we dont have totalResults element in DOM
+    if (!totalResults) return;
     totalResults.textContent = `${total_results} results for your search query`;
   });
 };

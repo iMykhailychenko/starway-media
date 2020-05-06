@@ -1,0 +1,42 @@
+if maxPage >= 3
+
+    ul.pagination.justify-content-center.my-5
+
+        li.page-item.prev.disabled
+            button.page-link.prev-btn(type="button") Previous
+
+        li.page-item.active
+            button.page-link.pagination-js(data-page="1" type="button") 1
+
+        li.page-item
+            button.page-link.pagination-js(data-page="2" type="button") 2
+
+        li.page-item
+            button.page-link.pagination-js(data-page="3" type="button") 3
+
+        li.page-item.next
+            button.page-link.next-btn(type="button") Next
+
+
+    form(method="post").pagination-form.input-group.mb-3.justify-content-center
+
+        input.col.col-3.form-control(type="number" name="page" placeholder="Enter page namber")
+
+        .input-group-append
+            button.btn.btn-outline-secondary.paggination-go(type="button") Go
+
+else if maxPage === 2
+
+    ul.pagination.justify-content-center.my-5
+
+        li.page-item.active
+            button.page-link.pagination-js(data-page="1" type="button") 1
+
+        li.page-item
+            button.page-link.pagination-js(data-page="2" type="button") 2
+
+
+else if maxPage === 1
+
+    .row
+

@@ -1,4 +1,4 @@
-import { paginationRouting } from '../../utils/utils';
+import paginationRouting from '../../utils/paginationRouting';
 
 const handlePagination = target => {
   const isActive = target.parentElement.classList.contains('active');

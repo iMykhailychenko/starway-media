@@ -1,9 +1,9 @@
 import queryString from 'query-string';
-import routes from '../router/routing';
 import debounce from 'lodash.debounce';
 
 // == handlers ==
 // click
+import homePageBtn from './handlers/homePageBtn';
 import handleReadMore from './handlers/handleReadMore';
 import handlePagination from './handlers/handlePagination';
 import handlePaginationPrevBtn from './handlers/handlePaginationPrevBtn';
@@ -22,10 +22,11 @@ document.addEventListener('click', event => {
   const search = queryString.parse(window.location.search);
 
   // breadcrumb link
-  if (target.classList.contains('home-page-js')) routes['/']();
+  if (target.classList.contains('home-page-js')) homePageBtn();
 
   // read more link
   if (target.classList.contains('movie-link')) handleReadMore(target);
+
   // open movie detailes on search list
   if (target.classList.contains('serch-item')) handleReadMore(target);
 

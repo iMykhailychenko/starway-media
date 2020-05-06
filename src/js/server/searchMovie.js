@@ -1,7 +1,8 @@
 import axios from 'axios';
+import KEY from '../utils/key';
 
-const searchMovie = (key, query, page = 1) => {
-  const uri = `https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${query}&page=${page}`;
+const searchMovie = (query, page = 1) => {
+  const uri = `https://api.themoviedb.org/3/search/movie?api_key=${KEY}&query=${query}&page=${page}`;
   return axios(uri).then(response => response.data);
 };
 
