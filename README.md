@@ -2,7 +2,6 @@
 
 ### Веб-сторінка за цим [посиланням](https://starway-media.netlify.app/)
 
-
 ### Тестове завдання для Front-End
 
 1. Розробити сайт пошуку фільмів використовуючи API https://www.themoviedb.org/documentation/api
