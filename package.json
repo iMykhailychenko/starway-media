@@ -52,7 +52,7 @@
     "bootstrap": "^4.4.1",
     "lodash.debounce": "^4.0.8",
     "lodash.throttle": "^4.1.1",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "query-string": "^6.11.1",
     "smoothscroll-polyfill": "^0.4.4"
   }
